@@ -2,6 +2,10 @@
 
 set -eo pipefail
 
+if [ -n "DEBUG" ]; then 
+  set -x
+fi
+
 usage() {
   echo 
   echo Usage: $0
