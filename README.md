@@ -31,9 +31,9 @@ ARG  NEXUS_HOST \
      NEXUS_USERNAME \
      NEXUS_PASSWORD
 
-CMD [ "-h", $NEXUS_HOST, "-r", $NEXUS_REPO, "-g", $NEXUS_GROUP,
-      "-a", $NEXUS_ARTIFACT, "-v", $NEXUS_VERSION,
-      "-u", $NEXUS_USERNAME, "-p", $NEXUS_PASSWORD ]
+RUN download -h $NEXUS_HOST -r $NEXUS_REPO -g $NEXUS_GROUP
+      -a $NEXUS_ARTIFACT -v $NEXUS_VERSION
+      -u $NEXUS_USERNAME -p $NEXUS_PASSWORD
 
 FROM amazoncorretto:11-alpine
 ...
